@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    123
+
+
+    <script>
+        function forEachFn(arr) {
+            console.log(this)
+            for (let i = 0; i < this.length; i++) {
+                arr(this[i], i, this)
+            }
+
+        }
+        let brr = [
+            1, 2, 3, 55, 66, 88
+        ]
+        Array.prototype.forEachFn = forEachFn;
+        console.log(Array.prototype)
+        brr.forEachFn((item, index, arr) => {
+            console.log(item, index, arr)
+        })
+    </script>
+</body>
+
+</html>
